@@ -4,7 +4,7 @@
     "start": 0,
     "limit": 20,
     "geoStoreBase": "http://localhost:9191/geostore/rest/",
-    "adminUrl": "http://localhost:8080/admin/",
+    "adminUrl": "http://localhost:9192/opensdi2-manager/",
     "msmTimeout": 30000,
     "mediaContent": "./externals/mapmanager/theme/media",
     "ASSET": {
@@ -63,17 +63,18 @@
             "ptype": "mxp_updater",
             "geoBatchRestURL":"http://localhost:9192/opensdi2-manager/facade/geobatch/rest/",
             "uploadUrl":"http://localhost:9192/opensdi2-manager/mvc/admin/updater/upload",
-            "actionTarget":{
-                "target": "north.tbar",
-                "index": 1
-            }
+            "ds2ds_zip2pg":"xls2pg",
+            "autoOpen": true,
+            "closable": false,
+            "showActionButton": false
         },
         {
             "ptype": "mxp_entity_manger",
             "notDuplicateOutputs": true,
+            "buttonText": "Data",
             "actionTarget": {
                 "target": "north.tbar",
-                "index": 2
+                "index": 1
             },
             "entities": [
                 {
@@ -370,13 +371,6 @@
                     "root": "data"
                 }
             ]
-        },
-        {
-            "ptype": "mxp_filebrowser",
-            "actionTarget": {
-                "target": "north.tbar",
-                "index": 4
-            }
         },
         {
             "ptype": "mxp_login",
