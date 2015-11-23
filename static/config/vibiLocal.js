@@ -1,10 +1,10 @@
-﻿{
+{
     "composerUrl": "",
     "socialUrl": "",
     "start": 0,
     "limit": 20,
-    "geoStoreBase": "http://vibi.geo-solutions.it/geostore/rest/",
-    "adminUrl": "http://vibi.geo-solutions.it/opensdi2-manager/",
+    "geoStoreBase": "http://localhost:9191/geostore/rest/",
+    "adminUrl": "http://localhost:9192/opensdi2-manager/",
     "msmTimeout": 30000,
     "mediaContent": "./externals/mapmanager/theme/media",
     "ASSET": {
@@ -61,8 +61,8 @@
     "adminTools": [
         {
             "ptype": "mxp_updater",
-            "geoBatchRestURL":"http://vibi.geo-solutions.it/opensdi2-manager/facade/geobatch/rest/",
-            "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/admin/updater/upload",
+            "geoBatchRestURL":"http://localhost:9192/opensdi2-manager/facade/geobatch/rest/",
+            "uploadUrl":"http://localhost:9192/opensdi2-manager/mvc/admin/updater/upload",
             "ds2ds_zip2pg":"xls2pg",
             "autoOpen": true,
             "closable": false,
