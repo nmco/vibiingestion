@@ -7,6 +7,22 @@
     "adminUrl": "http://localhost:9192/opensdi2-manager/",
     "msmTimeout": 30000,
     "mediaContent": "./externals/mapmanager/theme/media",
+    "header": {
+	   "html": "<div class='topbanner'><div id='left-banner'><img src='img/header_01.png' height='86' border='0' /> </div><div id='right-banner'><img src='img/header_02.png' height='86' style='float:right' border='0' /></div></div>",
+	   "css": "<style type='text/css'>div.topbanner{background-image: none;background-color:white;background-position:center top;height:100%;}</style>",
+	   "container": {
+			"border": false,
+			"header": false,
+			"collapsible": true,
+			"collapseMode":  "mini",
+			"hideCollapseTool": true,
+			"split": true,
+			"animCollapse": false,
+			"minHeight": 86,
+			"maxHeight": 86,
+			"height": 86
+	   }
+    },
     "ASSET": {
         "delete_icon": "./externals/mapmanager/theme/img/user_delete.png",
         "edit_icon": "./externals/mapmanager/theme/img/user_edit.png"
@@ -82,56 +98,34 @@
                     "autoExpandColumn": "label",
                     "autoload": true,
                     "basePath": "mvc/vibi/plot/",
-                    "canCreate": true,
-                    "canDelete": true,
-                    "canEdit": true,
+                    "canCreate": false,
+                    "canDelete": false,
+                    "canEdit": false,
                     "columns": [
                         {
-                            "header": "id",
-                            "mapping": "id",
-                            "name": "id"
+                            "header": "Plot #",
+                            "mapping": "plot_no",
+                            "name": "plot_no"
+                        },
+                        {
+                            "header": "Project Name",
+                            "mapping": "project_name",
+                            "name": "project_name"
+                        },
+                        {
+                            "header": "Plot Name",
+                            "mapping": "plot_name",
+                            "name": "plot_name"
                         },
                         {
                             "header": "Label",
-                            "mapping": "label",
-                            "name": "label"
+                            "mapping": "plot_label",
+                            "name": "plot_label"
                         },
                         {
-                            "header": "Default Production Uom",
-                            "mapping": "prod_default_unit",
-                            "name": "prod_default_unit"
-                        },
-                        {
-                            "header": "Default Area Uom",
-                            "mapping": "area_default_unit",
-                            "name": "area_default_unit"
-                        },
-                        {
-                            "header": "Default Yield Uom",
-                            "mapping": "yield_default_unit",
-                            "name": "yield_default_unit"
-                        },
-                        {
-                            "falseText": "",
-                            "fixed": true,
-                            "header": "Rabi",
-                            "mapping": "rabi",
-                            "maxWidth": 100,
-                            "name": "rabi",
-                            "trueText": "Yes",
-                            "width": 100,
-                            "xtype": "booleancolumn"
-                        },
-                        {
-                            "falseText": "",
-                            "fixed": true,
-                            "header": "Kharif",
-                            "mapping": "kharif",
-                            "maxWidth": 100,
-                            "name": "kharif",
-                            "trueText": "Yes",
-                            "width": 100,
-                            "xtype": "booleancolumn"
+                            "header": "Monitoring Event",
+                            "mapping": "monitoring_event",
+                            "name": "monitoring_event"
                         }
                     ],
                     "createTitle": "Create a new Plot",
@@ -140,228 +134,26 @@
                     "editTitle": "Edit Plot",
                     "fields": [
                         {
-                            "mapping": "id",
-                            "name": "id"
+                            "mapping": "plot_no",
+                            "name": "plot_no"
                         },
                         {
-                            "mapping": "label",
-                            "name": "label"
+                            "mapping": "project_name",
+                            "name": "project_name"
                         },
                         {
-                            "mapping": "prod_default_unit",
-                            "name": "prod_default_unit"
+                            "mapping": "plot_name",
+                            "name": "plot_name"
                         },
                         {
-                            "mapping": "area_default_unit",
-                            "name": "area_default_unit"
+                            "mapping": "plot_label",
+                            "name": "plot_label"
                         },
                         {
-                            "mapping": "yield_default_unit",
-                            "name": "yield_default_unit"
-                        },
-                        {
-                            "header": "Rabi",
-                            "mapping": "rabi",
-                            "name": "rabi",
-                            "type": "boolean"
-                        },
-                        {
-                            "header": "Kharif",
-                            "mapping": "kharif",
-                            "name": "kharif",
-                            "type": "boolean"
+                            "mapping": "monitoring_event",
+                            "name": "monitoring_event"
                         }
                     ],
-                    "form": {
-                        "create": [
-                            {
-                                "allowBlank": false,
-                                "fieldLabel": "Id",
-                                "name": "id",
-                                "reandonly": false,
-                                "xtype": "textfield"
-                            },
-                            {
-                                "allowBlank": false,
-                                "fieldLabel": "Label",
-                                "name": "label",
-                                "xtype": "textfield"
-                            },
-                            {
-                                "fieldLabel": "Season",
-                                "items": [
-                                    {
-                                        "boxLabel": "Rabi",
-                                        "inputValue": true,
-                                        "name": "rabi"
-                                    },
-                                    {
-                                        "boxLabel": "Kharif",
-                                        "inputValue": true,
-                                        "name": "kharif"
-                                    }
-                                ],
-                                "name": "seasons",
-                                "xtype": "checkboxgroup"
-                            },
-                            {
-                                "allowBlank": false,
-                                "displayField": "name",
-                                "fieldLabel": "Production Uom",
-                                "forceSelected": true,
-                                "hiddenName": "prod_default_unit",
-                                "mode": "local",
-                                "name": "prod_default_unit",
-                                "store": {
-                                    "autoLoad": true,
-                                    "fields": ["id", "name"],
-                                    "idProperty": "id",
-                                    "root": "data",
-                                    "totalProperty": "total",
-                                    "url": "/opensdi2-manager/mvc/cip/uom/filterby?attributename=cls&valueLike=production",
-                                    "xtype": "jsonstore"
-                                },
-                                "triggerAction": "all",
-                                "valueField": "id",
-                                "xtype": "combo"
-                            },
-                            {
-                                "allowBlank": false,
-                                "displayField": "name",
-                                "fieldLabel": "Area Uom",
-                                "hiddenName": "area_default_unit",
-                                "mode": "local",
-                                "name": "area_default_unit",
-                                "store": {
-                                    "autoLoad": true,
-                                    "fields": ["id", "name"],
-                                    "idProperty": "id",
-                                    "root": "data",
-                                    "totalProperty": "total",
-                                    "url": "/opensdi2-manager/mvc/cip/uom/filterby?attributename=cls&valueLike=area",
-                                    "xtype": "jsonstore"
-                                },
-                                "triggerAction": "all",
-                                "valueField": "id",
-                                "xtype": "combo"
-                            },
-                            {
-                                "allowBlank": false,
-                                "displayField": "name",
-                                "fieldLabel": "Yield Uom",
-                                "hiddenName": "yield_default_unit",
-                                "mode": "local",
-                                "name": "yield_default_unit",
-                                "store": {
-                                    "autoLoad": true,
-                                    "fields": ["id", "name"],
-                                    "idProperty": "id",
-                                    "root": "data",
-                                    "totalProperty": "total",
-                                    "url": "/opensdi2-manager/mvc/cip/uom/filterby?attributename=cls&valueLike=yield",
-                                    "xtype": "jsonstore"
-                                },
-                                "triggerAction": "all",
-                                "valueField": "id",
-                                "xtype": "combo"
-                            }
-                        ],
-                        "edit": [
-                            {
-                                "allowBlank": false,
-                                "fieldLabel": "Id",
-                                "name": "id",
-                                "readOnly": true,
-                                "xtype": "textfield"
-                            },
-                            {
-                                "allowBlank": false,
-                                "fieldLabel": "Label",
-                                "name": "label",
-                                "xtype": "textfield"
-                            },
-                            {
-                                "fieldLabel": "Season",
-                                "items": [
-                                    {
-                                        "boxLabel": "Rabi",
-                                        "inputValue": true,
-                                        "name": "rabi"
-                                    },
-                                    {
-                                        "boxLabel": "Kharif",
-                                        "inputValue": true,
-                                        "name": "kharif"
-                                    }
-                                ],
-                                "name": "seasons",
-                                "xtype": "checkboxgroup"
-                            },
-                            {
-                                "allowBlank": false,
-                                "displayField": "name",
-                                "fieldLabel": "Production Uom",
-                                "hiddenName": "prod_default_unit",
-                                "mode": "local",
-                                "name": "prod_default_unit",
-                                "store": {
-                                    "autoLoad": true,
-                                    "fields": ["id", "name"],
-                                    "idProperty": "id",
-                                    "root": "data",
-                                    "totalProperty": "total",
-                                    "url": "/opensdi2-manager/mvc/cip/uom/filterby?attributename=cls&valueLike=production",
-                                    "xtype": "jsonstore"
-                                },
-                                "triggerAction": "all",
-                                "value": "000_tons",
-                                "valueField": "id",
-                                "xtype": "combo"
-                            },
-                            {
-                                "allowBlank": false,
-                                "displayField": "name",
-                                "fieldLabel": "Production Uom",
-                                "hiddenName": "area_default_unit",
-                                "mode": "local",
-                                "name": "area_default_unit",
-                                "store": {
-                                    "autoLoad": true,
-                                    "fields": ["id", "name"],
-                                    "idProperty": "id",
-                                    "root": "data",
-                                    "totalProperty": "total",
-                                    "url": "/opensdi2-manager/mvc/cip/uom/filterby?attributename=cls&valueLike=area",
-                                    "xtype": "jsonstore"
-                                },
-                                "triggerAction": "all",
-                                "value": "000_ha",
-                                "valueField": "id",
-                                "xtype": "combo"
-                            },
-                            {
-                                "allowBlank": false,
-                                "displayField": "name",
-                                "fieldLabel": "Production Uom",
-                                "hiddenName": "yield_default_unit",
-                                "mode": "local",
-                                "name": "yield_default_unit",
-                                "store": {
-                                    "autoLoad": true,
-                                    "fields": ["id", "name"],
-                                    "idProperty": "id",
-                                    "root": "data",
-                                    "totalProperty": "total",
-                                    "url": "/opensdi2-manager/mvc/cip/uom/filterby?attributename=cls&valueLike=yield",
-                                    "xtype": "jsonstore"
-                                },
-                                "triggerAction": "all",
-                                "value": "kg_ha",
-                                "valueField": "id",
-                                "xtype": "combo"
-                            }
-                        ]
-                    },
                     "iconCls": "vibi_plot_ic",
                     "id": "Plots",
                     "idProperty": "id",
