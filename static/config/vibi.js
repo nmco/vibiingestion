@@ -79,7 +79,7 @@
             "ptype": "mxp_updater",
             "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
             "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/admin/updater/upload",
-            "ds2ds_zip2pg":"xls2pg",
+            "flowId":"mapper",
             "autoOpen": true,
             "closable": false,
             "showActionButton": false
@@ -98,9 +98,9 @@
                     "autoExpandColumn": "label",
                     "autoload": true,
                     "basePath": "mvc/vibi/plot/",
-                    "canCreate": true,
-                    "canDelete": true,
-                    "canEdit": true,
+                    "canCreate": false,
+                    "canDelete": false,
+                    "canEdit": false,
                     "columns": [
                         {
                             "header": "Plot #",

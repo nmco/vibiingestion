@@ -77,9 +77,9 @@
     "adminTools": [
         {
             "ptype": "mxp_updater",
-            "geoBatchRestURL":"http://localhost:9192/opensdi2-manager/facade/geobatch/rest/",
+            "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
             "uploadUrl":"http://localhost:9192/opensdi2-manager/mvc/admin/updater/upload",
-            "ds2ds_zip2pg":"xls2pg",
+            "flowId":"mapper",
             "autoOpen": true,
             "closable": false,
             "showActionButton": false
