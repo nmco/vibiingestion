@@ -180,6 +180,113 @@
             }
         }
     ],
+    "loggedTools": [
+        {
+            "ptype": "mxp_entity_manger",
+            "notDuplicateOutputs": true,
+            "buttonText": "Data",
+            "setActiveOnOutput": true,
+            "closable": false,
+            "autoOpen": true,
+            "entities": [
+                {
+                    "api": {},
+                    "autoExpandColumn": "label",
+                    "autoload": true,
+                    "basePath": "mvc/vibi/plot/",
+                    "canCreate": false,
+                    "canDelete": false,
+                    "canEdit": false,
+                    "columns": [
+                        {
+                            "header": "Plot #",
+                            "mapping": "plot_no",
+                            "name": "plot_no"
+                        },
+                        {
+                            "header": "Project Name",
+                            "mapping": "project_name",
+                            "name": "project_name"
+                        },
+                        {
+                            "header": "Plot Name",
+                            "mapping": "plot_name",
+                            "name": "plot_name"
+                        },
+                        {
+                            "header": "Label",
+                            "mapping": "plot_label",
+                            "name": "plot_label"
+                        },
+                        {
+                            "header": "Monitoring Event",
+                            "mapping": "monitoring_event",
+                            "name": "monitoring_event"
+                        }
+                    ],
+                    "createTitle": "Create a new Plot",
+                    "displayField": "label",
+                    "editHeight": 270,
+                    "editTitle": "Edit Plot",
+                    "fields": [
+                        {
+                            "mapping": "plot_no",
+                            "name": "plot_no"
+                        },
+                        {
+                            "mapping": "project_name",
+                            "name": "project_name"
+                        },
+                        {
+                            "mapping": "plot_name",
+                            "name": "plot_name"
+                        },
+                        {
+                            "mapping": "plot_label",
+                            "name": "plot_label"
+                        },
+                        {
+                            "mapping": "monitoring_event",
+                            "name": "monitoring_event"
+                                    }
+                                ],
+                    "iconCls": "vibi_plot_ic",
+                    "id": "Plots",
+                    "idProperty": "id",
+                    "name": "Plot",
+                    "pluralName": "Plots",
+                    "restful": true,
+                    "root": "data"
+                }
+            ]
+        },
+        {
+            "ptype": "mxp_updater",
+            "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
+            "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/admin/updater/upload",
+            "flowId":"mapper",
+            "setActiveOnOutput": false,
+            "autoOpen": true,
+            "closable": false,
+            "showActionButton": false,
+            "autoRefreshState": true
+        },
+        {
+            "ptype": "mxp_login",
+            "pluginId": "loginTool",
+            "actionTarget": {
+                "target": "north.tbar",
+                "index": 10
+            }
+        },
+        {
+            "ptype": "mxp_languageselector",
+            "actionTarget": {
+                "target": "north.tbar",
+                "index": 20
+            }
+        }
+    ],
     "embedLink": {
         "embeddedTemplateName": "viewer",
         "showDirectURL": false,
