@@ -78,7 +78,7 @@
         {
             "ptype": "mxp_updater",
             "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
-            "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/admin/updater/upload",
+            "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/vibi/upload/?folder=/var/tomcats/geobatch/conf/GEOBATCH_CONFIG_DIR/vibi/input",
             "flowId":"mapper",
             "autoOpen": true,
             "closable": false,
@@ -134,26 +134,26 @@
                     "editTitle": "Edit Plot",
                     "fields": [
                         {
-                            "mapping": "plot_no",
+                            "mapping": "plotNo",
                             "name": "plot_no"
                         },
                         {
-                            "mapping": "project_name",
+                            "mapping": "projectName",
                             "name": "project_name"
                         },
                         {
-                            "mapping": "plot_name",
+                            "mapping": "plotName",
                             "name": "plot_name"
                         },
                         {
-                            "mapping": "plot_label",
+                            "mapping": "plotLabel",
                             "name": "plot_label"
                         },
                         {
-                            "mapping": "monitoring_event",
+                            "mapping": "monitoringEvent",
                             "name": "monitoring_event"
-                                    }
-                                ],
+                        }
+                    ],
                     "iconCls": "vibi_plot_ic",
                     "id": "Plots",
                     "idProperty": "id",
@@ -230,26 +230,26 @@
                     "editTitle": "Edit Plot",
                     "fields": [
                         {
-                            "mapping": "plot_no",
+                            "mapping": "plotNo",
                             "name": "plot_no"
                         },
                         {
-                            "mapping": "project_name",
+                            "mapping": "projectName",
                             "name": "project_name"
                         },
                         {
-                            "mapping": "plot_name",
+                            "mapping": "plotName",
                             "name": "plot_name"
                         },
                         {
-                            "mapping": "plot_label",
+                            "mapping": "plotLabel",
                             "name": "plot_label"
                         },
                         {
-                            "mapping": "monitoring_event",
+                            "mapping": "monitoringEvent",
                             "name": "monitoring_event"
-                                    }
-                                ],
+                        }
+                    ],
                     "iconCls": "vibi_plot_ic",
                     "id": "Plots",
                     "idProperty": "id",
@@ -263,7 +263,7 @@
         {
             "ptype": "mxp_updater",
             "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
-            "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/admin/updater/upload",
+            "uploadUrl":"http://vibi.geo-solutions.it/mvc/vibi/upload/?folder=/var/tomcats/geobatch/conf/GEOBATCH_CONFIG_DIR/vibi/input",
             "flowId":"mapper",
             "setActiveOnOutput": false,
             "autoOpen": true,
