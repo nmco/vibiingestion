@@ -76,18 +76,13 @@
     ],
     "adminTools": [
         {
-            "ptype": "mxp_updater",
-            "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
-            "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/vibi/upload/?folder=/var/tomcats/geobatch/conf/GEOBATCH_CONFIG_DIR/vibi/input",
-            "flowId":"mapper",
-            "autoOpen": true,
-            "closable": false,
-            "showActionButton": false
-        },
-        {
             "ptype": "mxp_entity_manger",
             "notDuplicateOutputs": true,
             "buttonText": "Data",
+            "setActiveOnOutput": true,
+            "closable": false,
+            "autoOpen": true,
+            "showActionButton": false,
             "actionTarget": {
                 "target": "north.tbar",
                 "index": 1
@@ -165,6 +160,23 @@
             ]
         },
         {
+            "ptype": "mxp_updater",
+            "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
+            "uploadUrl":"http://vibi.geo-solutions.it/opensdi2-manager/mvc/vibi/upload/?folder=/var/tomcats/geobatch/conf/GEOBATCH_CONFIG_DIR/vibi/input",
+            "flowId":"mapper",
+            "autoOpen": true,
+            "closable": false,
+            "showActionButton": false
+        },
+        {
+            "ptype": "mxp_usermanager",
+            "loginManager": "loginTool",
+            "actionTarget":{
+              "target": "north.tbar",
+              "index": 2
+            }
+        },
+        {
             "ptype": "mxp_login",
             "pluginId": "loginTool",
             "actionTarget": {
@@ -188,6 +200,7 @@
             "setActiveOnOutput": true,
             "closable": false,
             "autoOpen": true,
+            "showActionButton": false,
             "entities": [
                 {
                     "api": {},
@@ -269,7 +282,8 @@
             "autoOpen": true,
             "closable": false,
             "showActionButton": false,
-            "autoRefreshState": true
+            "autoRefreshState": true,
+            "restrictToGroups": [ "uploaders" ]
         },
         {
             "ptype": "mxp_login",

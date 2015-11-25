@@ -76,18 +76,12 @@
     ],
     "adminTools": [
         {
-            "ptype": "mxp_updater",
-            "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
-            "uploadUrl":"http://localhost:9192/opensdi2-manager/mvc/admin/updater/upload",
-            "flowId":"mapper",
-            "autoOpen": true,
-            "closable": false,
-            "showActionButton": false
-        },
-        {
             "ptype": "mxp_entity_manger",
             "notDuplicateOutputs": true,
             "buttonText": "Data",
+            "setActiveOnOutput": true,
+            "closable": false,
+            "autoOpen": true,
             "actionTarget": {
                 "target": "north.tbar",
                 "index": 1
@@ -163,6 +157,15 @@
                     "root": "data"
                 }
             ]
+        },
+        {
+            "ptype": "mxp_updater",
+            "geoBatchRestURL":"http://vibi.geo-solutions.it/geobatch/rest/",
+            "uploadUrl":"http://localhost:9192/opensdi2-manager/mvc/admin/updater/upload",
+            "flowId":"mapper",
+            "autoOpen": true,
+            "closable": false,
+            "showActionButton": false
         },
         {
             "ptype": "mxp_login",
