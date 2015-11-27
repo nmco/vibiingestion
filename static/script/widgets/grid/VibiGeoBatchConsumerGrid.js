@@ -23,6 +23,8 @@ mxp.widgets.VibiGeoBatchConsumerGrid = Ext.extend(mxp.widgets.GeoBatchConsumerGr
 
     adminUrl: 'http://vibi.geo-solutions.it/opensdi2-manager',
 
+    tooltipDownload: 'Download File',
+
     initComponent: function() {
 
         this.resourceManager = new GeoStore.Resource({
@@ -232,13 +234,13 @@ mxp.widgets.VibiGeoBatchConsumerGrid = Ext.extend(mxp.widgets.GeoBatchConsumerGr
             }, {
                 xtype: 'actioncolumn',
                 width: 35,
-                tooltip: 'Download File',
+                tooltip: this.tooltipDownload,
                 handler: this.downloadFile,
                 scope: this,
                 items: [{
                     iconCls: 'inbox-download_ic',
                     width: 25,
-                    tooltip: 'Download File',
+                    tooltip: this.tooltipDownload,
                     scope: this,
                     getClass: function(v, meta, rec) {
                         return 'x-grid-center-icon action_column_btn';
