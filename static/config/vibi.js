@@ -166,7 +166,8 @@
             "flowId":"mapper",
             "autoOpen": true,
             "closable": false,
-            "showActionButton": false
+            "showActionButton": false,
+            "filters": [{ title : "Excel files", extensions : "xls,xlsx" }]
         },
         {
             "ptype": "mxp_usermanager",
@@ -283,7 +284,8 @@
             "closable": false,
             "showActionButton": false,
             "autoRefreshState": true,
-            "restrictToGroups": [ "uploaders" ]
+            "restrictToGroups": [ "uploaders" ],
+            "filters": [{ title : "Excel files", extensions : "xls,xlsx" }]
         },
         {
             "ptype": "mxp_login",
