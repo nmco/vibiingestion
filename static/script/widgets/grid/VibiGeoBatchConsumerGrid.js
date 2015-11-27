@@ -238,7 +238,7 @@ mxp.widgets.VibiGeoBatchConsumerGrid = Ext.extend(mxp.widgets.GeoBatchConsumerGr
                 items: [{
                     iconCls: 'inbox-download_ic',
                     width: 25,
-                    tooltip: this.tooltipLog,
+                    tooltip: 'Download File',
                     scope: this,
                     getClass: function(v, meta, rec) {
                         return 'x-grid-center-icon action_column_btn';
