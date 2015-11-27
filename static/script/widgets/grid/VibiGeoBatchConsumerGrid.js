@@ -41,7 +41,7 @@ mxp.widgets.VibiGeoBatchConsumerGrid = Ext.extend(mxp.widgets.GeoBatchConsumerGr
 
         this.listeners = {
             activate: function() {
-                this.store.load();
+                this.autoRefresh();
             },
             scope: this
         };
